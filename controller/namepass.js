@@ -19,11 +19,12 @@ const getData = async (req,res) => {
 
 }
 
-//Get Data by ID
-const getDataById = async (req, res) => {
+//Get Data by user
+const getDataByUser = async (req, res) => {
 
     try{
-        const data = await name_pass.findOne({ _id: req.params.id });
+        const {name,password} = req.query;
+        const data = await name_pass.findOne({ name, password });
         if(!data){
             return res.status(404).json({ message: 'Data not found' });
         }
@@ -98,7 +99,7 @@ const deleteData = async (req, res) => {
 
 module.exports = {
     getData,
-    getDataById,
+    getDataByUser,
     addData,
     updateData,
     deleteData

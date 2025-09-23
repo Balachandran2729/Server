@@ -4,6 +4,7 @@ const connectDB = require('./config/db');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const NamePass = require('./routes/namepass')
+const testdata = require('./routes/testdata')
 
 dotenv.config();
 const PORT = process.env.PORT || 5000;
@@ -15,7 +16,7 @@ app.use(cors());
 
 
 app.use('/api/namepass', NamePass);
-
+app.use('/api/testdata' , testdata);
 
 
 app.get('/', (req, res) => {
