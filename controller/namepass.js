@@ -23,8 +23,7 @@ const getData = async (req,res) => {
 const getDataByUser = async (req, res) => {
 
     try{
-        const {name,password} = req.query;
-        const data = await name_pass.findOne({ name, password });
+        const data = await name_pass.findOne({ name: req.body.name , password: req.body.password });
         if(!data){
             return res.status(404).json({ message: 'Data not found' });
         }
