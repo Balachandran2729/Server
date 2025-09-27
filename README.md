@@ -58,4 +58,5 @@ This project provides a simple API built with **Node.js**, **Express**, and **Mo
 * **Mongoose** – ODM for MongoDB.
 * **Nodemon** – Auto-restart server during development.
 * **dotenv** – Manage environment variables.
+* **Multer** – Handle multipart/form-data(file uploads).
 
