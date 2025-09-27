@@ -65,12 +65,12 @@ const updateData = async (req, res) => {
         const { name, password } = req.body;
         const data = await name_pass.findOne({ _id: req.params.id });
         if(!data){
-            return res.status(404).json({ message: 'Data not found' });
+            return res.status(404).json({ message: 'profile not found' });
         }
         data.name = name || data.name;
         data.password = password || data.password;
         const updatedData = await data.save();
-        res.status(200).json({data: updatedData , message: 'Data updated successfully' });
+        res.status(200).json({data: updatedData , message: 'Profile updated successfully' });
 
     } catch(error){
         console.error('Error updating data:', error);

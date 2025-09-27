@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const NamePass = require('./routes/namepass')
 const testdata = require('./routes/testdata')
+const profile = require('./routes/profile')
 
 dotenv.config();
 const PORT = process.env.PORT || 5000;
@@ -17,6 +18,7 @@ app.use(cors());
 
 app.use('/api/namepass', NamePass);
 app.use('/api/testdata' , testdata);
+app.use('/api/profile' , profile);
 
 
 app.get('/', (req, res) => {
